@@ -25,6 +25,10 @@ public class Copy {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "STATUS")
+    @JoinColumn(name = "TITLE_ID")
     public Title title;
+
+    @ManyToOne
+    @JoinColumn(name = "READER_ID")
+    public Reader reader;
 }

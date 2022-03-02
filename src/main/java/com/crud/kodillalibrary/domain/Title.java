@@ -36,7 +36,7 @@ public class Title {
     @OneToMany(
             targetEntity = Copy.class,
             mappedBy = "title",
-            fetch = FetchType.EAGER,
+            fetch = FetchType.LAZY,
             cascade = CascadeType.ALL
     )
     private List<Copy> copies;

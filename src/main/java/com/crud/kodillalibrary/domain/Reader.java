@@ -5,12 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,4 +27,12 @@ public class Reader {
 
     @Column(name = "ACCOUNTSTARTDATE")
     private LocalDate accountStartDate;
+
+    @OneToMany(
+            targetEntity = Copy.class,
+            mappedBy = "reader",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL
+    )
+    private List<Copy> copies;
 }

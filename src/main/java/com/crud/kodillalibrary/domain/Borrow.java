@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity(name = "borrowing")
-public class Borrowing {
+public class Borrow {
     @Id
     @NotNull
     @GeneratedValue
