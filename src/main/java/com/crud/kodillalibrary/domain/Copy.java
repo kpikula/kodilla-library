@@ -7,17 +7,18 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "copies")
+@Entity(name = "COPIES")
 public class Copy {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "ID_COPY", unique = true)
+    @Column(name = "COPY_ID", unique = true)
     private Long id;
 
     @NotNull
@@ -28,7 +29,11 @@ public class Copy {
     @JoinColumn(name = "TITLE_ID")
     public Title title;
 
-    @ManyToOne
-    @JoinColumn(name = "READER_ID")
-    public Reader reader;
+    @OneToMany(
+            targetEntity = Borrow.class,
+            mappedBy = "copy",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL
+    )
+    private List<Borrow> borrows;
 }

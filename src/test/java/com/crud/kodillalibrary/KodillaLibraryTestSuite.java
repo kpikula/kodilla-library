@@ -15,18 +15,18 @@ public class KodillaLibraryTestSuite {
     @Autowired
     private BorrowRepository borrowRepository;
 
-    @Test
-    void testBorrowSave() {
-        //given
-        Borrow borrow = new Borrow(1L, LocalDate.now(), LocalDate.now());
-
-        //when
-        borrowRepository.save(borrow);
-
-        //then
-        Assertions.assertEquals(1L, borrow.getId());
-
-        // cleanup
-        borrowRepository.deleteAll();
-    }
+//    @Test
+//    void testBorrowSave() {
+//        //given
+//        Borrow borrow = new Borrow(1L, LocalDate.now(), LocalDate.now());
+//
+//        //when
+//        borrowRepository.save(borrow);
+//
+//        //then
+//        Assertions.assertEquals(1L, borrow.getId());
+//
+//        // cleanup
+//        borrowRepository.deleteAll();
+//    }
 }

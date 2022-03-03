@@ -1,5 +1,6 @@
 package com.crud.kodillalibrary.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,25 +15,27 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "readers")
+@Entity(name = "READERS")
 public class Reader {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "ID_READER")
+    @Column(name = "READER_ID")
     private Long id;
 
     @Column(name = "NAME")
     private String name;
 
+    @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "ACCOUNTSTARTDATE")
     private LocalDate accountStartDate;
 
     @OneToMany(
-            targetEntity = Copy.class,
+            targetEntity = Borrow.class,
             mappedBy = "reader",
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL
     )
-    private List<Copy> copies;
+    private List<Borrow> borrows;
 }

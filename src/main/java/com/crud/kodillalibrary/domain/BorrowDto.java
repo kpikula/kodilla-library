@@ -13,4 +13,6 @@ public class BorrowDto {
     private Long id;
     private LocalDate borrowDate;
     private LocalDate returnDate;
+    private Long copyId;
+    private Long readerId;
 }

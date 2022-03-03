@@ -13,17 +13,17 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "books")
+@Entity(name = "TITLES")
 public class Title {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "ID_BOOK", unique = true)
+    @Column(name = "TITLE_ID", unique = true)
     private Long id;
 
     @NotNull
     @Column(name = "TITLE")
-    private String bookTitle;
+    private String title;
 
     @NotNull
     @Column(name = "AUTHOR")

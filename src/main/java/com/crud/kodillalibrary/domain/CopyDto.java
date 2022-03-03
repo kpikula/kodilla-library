@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,6 +12,6 @@ import javax.validation.constraints.NotNull;
 public class CopyDto {
     private Long id;
     private String status;
-    public Title title;
-    public Reader reader;
+    private Long titleId;
+    private List<BorrowDto> borrows;
 }

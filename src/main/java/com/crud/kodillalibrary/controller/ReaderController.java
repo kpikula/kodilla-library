@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,5 +22,9 @@ public class ReaderController {
 
     @PostMapping
     public void createReader(ReaderDto readerDto) {
+        ReaderDto dto = ReaderDto.builder()
+                .name("Kate")
+                .accountStartDate(LocalDate.of(2002, 5,24))
+                .build();
     }
 }

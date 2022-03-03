@@ -10,9 +10,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Builder
 public class ReaderDto {
     private Long id;
     private String name;
     private LocalDate accountStartDate;
-    private List<Copy> copies;
 }
